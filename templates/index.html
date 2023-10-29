@@ -6,18 +6,19 @@
 <div class="card">
     <div class="row no-gutters">
         <div class="col-md-2">
-            <!-- 左侧列，放置图像 -->
+            <!-- 左側列放置圖像 -->
             <img src="{{ post.image_url }}" alt="Post Image" class="card-img">
         </div>
         <div class="col-md-8">
-            <!-- 右侧列，放置卡的其余内容 -->
+            <!-- 右側是cardㄉ內容-->
             <div class="card-body">
-                <h5 class="card-title">
+                <h3 class="card-title">
                     <a href="/post/{{ post.slug }}">{{ post.title }}</a>
-                </h5>
-                <p class="card-text">作者: {{ post.author }}</p>
-                <p class="card-text">{{ post.chapter }}</p>
-                <p class="card-text">出版时间: {{ post.pub_date }}</p>
+                </h3>
+                <h5 class="card-text">作者: {{ post.author }}</h5>
+                <h5 class="card-text">{{ post.chapter }}</h5>
+                <h5 class="card-text">出版時間: {{ post.pub_date }}</h5>
+                <a href="javascript:void(0);" class="btn btn-primary" onclick="addToMyList('{{ post.title }}')">租借第一本</a>
             </div>
         </div>
     </div>

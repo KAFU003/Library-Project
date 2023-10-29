@@ -19,7 +19,7 @@ def showpost(request, slug):
     except:
         return redirect("/")
     #select * from post where slug=%slug
-    
+
 '''
 def homepage(request):
     posts = Post.objects.all() #select * from post
