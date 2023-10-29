@@ -3,31 +3,25 @@
 {% block headmessage %} <h3 style='font-family:標楷體;'>圖書列表</a> {% endblock headmessage %} 
 {% block content %} 
 {% for post in posts %}
-<div class='card'>
-    <div class='card-header row'>
-        <div class='col-md-auto'>
-            <p style='font-family:微軟正黑體;font-size:18pt;font-weight:bold;'>
-            <a href='/post/{{post.slug}}'>{{ post.title }} </a>
-            </p>
+<div class="card">
+    <div class="row no-gutters">
+        <div class="col-md-2">
+            <!-- 左侧列，放置图像 -->
+            <img src="{{ post.image_url }}" alt="Post Image" class="card-img">
         </div>
-        <div class='col'>
-            <p style='font-family:微軟正黑體;font-size:18pt;font-weight:bold;'>
-            <a>|   作者:{{ post.author }} </a>
-            </p>
+        <div class="col-md-8">
+            <!-- 右侧列，放置卡的其余内容 -->
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="/post/{{ post.slug }}">{{ post.title }}</a>
+                </h5>
+                <p class="card-text">作者: {{ post.author }}</p>
+                <p class="card-text">{{ post.chapter }}</p>
+                <p class="card-text">出版时间: {{ post.pub_date }}</p>
+            </div>
         </div>
-        
-    </div>
-    <div class='card-body' style='background-color:#ffffff'>
-        <p style='font-family:微軟正黑體;font-size:15pt;font-weight:bold;'>
-           {{ post.chapter }}
-        </p>
-    </div>
-    <div class='card-footer'  style='background-color:#ffffff'>
-        <p>
-            出版時間：{{ post.pub_date }}
-        </p>
     </div>
 </div>
-<br> 
 {% endfor %}
 {% endblock content %}
+<a href='/post/{{post.slug}}'>{{ post.title }} </a>
