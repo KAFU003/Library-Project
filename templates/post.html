@@ -2,8 +2,10 @@
 {% load markdown_extras %}
 {% block title %} {{ post.title }} - 文學天地 {% endblock title %}
 {% block headmessage %} 
-<h3 style='font-family:微軟正黑體;'>{{ post.title }}</h3>
-<a style='font-family:微軟正黑體;' href='/'>回首頁</a>
+<div style='display: flex; justify-content: space-between; align-items: center;'>
+    <h3 style='font-family: 微軟正黑體;'>{{ post.title }}</h3>
+    <a style='font-family: 微軟正黑體;' href='/'>回首頁</a>
+</div>
 {% endblock headmessage %} 
 {% block content %} 
 <h4 style='font-family:微軟正黑體;'>{{ post.chapter }}</h4>

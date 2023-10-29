@@ -1,22 +1,22 @@
 {% extends "base2.html" %}
-{% block title %}歡迎光臨我的部落格{% endblock title %}
-{% block headmessage %} <h3 style='font-family:標楷體;'>本站文章列表</a> {% endblock headmessage %} 
+{% block title %}歡迎光臨咱們的圖書館{% endblock title %}
+{% block headmessage %} <h3 style='font-family:標楷體;'>圖書列表</a> {% endblock headmessage %} 
 {% block content %} 
 {% for post in posts %}
 <div class='card'>
     <div class='card-header'>
-        <p style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;'>
-            <a href='/post/{{post.slug}}'>{{ post.title }}</a>
+        <p style='font-family:微軟正黑體;font-size:18pt;font-weight:bold;'>
+            <a href='/post/{{post.slug}}'>{{ post.title }} </a><a>{{ post.author }} </a>
         </p>
     </div>
     <div class='card-body' style='background-color:#c176ff'>
-        <p>
-           {{ post.chapter | truncatechars:40 }}
+        <p style='font-family:微軟正黑體;font-size:15pt;font-weight:bold;'>
+           {{ post.chapter }}
         </p>
     </div>
     <div class='card-footer'  style='background-color:#efefef'>
         <p>
-            發佈時間：{{ post.pub_date | date:"Y M d, h:m:s A"}}
+            出版時間：{{ post.pub_date }}
         </p>
     </div>
 </div>
