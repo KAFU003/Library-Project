@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from mysite.models import Post
-from django.http import HttpResponse
 from datetime import datetime
 from django.shortcuts import redirect
+from .filters import BookFilter
+
 # Create your views here.
 def homepage(request):
     posts = Post.objects.all()
@@ -19,6 +20,20 @@ def showpost(request, slug):
     except:
         return redirect("/")
     #select * from post where slug=%slug
+
+def filter(request):
+    book = Post.objects.all()
+ 
+    bookFilter = BookFilter(queryset=book)
+ 
+    if request.method == "POST":
+        bookFilter = BookFilter(request.POST, queryset=book)
+ 
+    context = {
+        'bookFilter': bookFilter
+    }
+ 
+    return render(request, 'filter.html', context)    
 
 '''
 def homepage(request):
