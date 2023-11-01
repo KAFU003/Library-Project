@@ -3,7 +3,7 @@ import django_filters
  
  
 class BookFilter(django_filters.FilterSet):
- 
+    
     class Meta:
         model = Post
-        fields = '__all__'
+        fields = ['title', 'genre', 'pub_date']
