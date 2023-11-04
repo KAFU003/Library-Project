@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mysite',
     'django_filters',
+    'tailwind',
+    'theme',
+    'django_browser_reload', 
+]
+TAILWIND_APP_NAME = 'theme'
+
+INTERNAL_APP_NAME = [
+    "127.0.0.1"
 ]
 
 MIDDLEWARE = [
@@ -49,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = 'library_project.urls'
@@ -64,6 +74,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'mysite.cxt_processor.theme',
             ],
         },
     },
