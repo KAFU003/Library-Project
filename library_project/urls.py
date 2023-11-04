@@ -17,13 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include,path
 from mysite import views as mv
-from mysite.views import change_theme
 
 urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
     path('admin/', admin.site.urls),
-    path('switch-theme/', change_theme, name="change-theme"),
+    path('switch-theme/', mv.change_theme, name="change-theme"),
     path('', mv.homepage, name="homepage"),
-    path('post/<slug:slug>/', mv.showpost, name="showpost"),
+    path('intro/<slug:slug>/', mv.showintro, name="showintro"),
     path('filter/', mv.filter, name="filter"),
+    path('post/<int:book_id>/', mv.showepisode, name='showepisode'),
 ]

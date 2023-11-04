@@ -1,0 +1,36 @@
+{% extends "base2.html" %}
+{% block title %} {{ post.title }} - 介紹{% endblock title %}
+{% block headmessage %} 
+<div style='display: flex; justify-content: space-between; align-items: center;'>
+    <h3 style='font-family: 微軟正黑體;'>{{ post.title }}簡介</h3>
+    <a style='font-family: 微軟正黑體;' href='/'>回首頁</a>
+</div>
+{% endblock headmessage %} 
+{% block content %} 
+<div class="card">
+    <div class="row no-gutters">
+        <div class="col-md-3">
+            <!-- 左側列放置圖像 -->
+            <img src="{{ post.image_url }}" alt="Post Image" class="card-img">
+        </div>
+        <div class="col-md-8">
+            <!-- 右側是cardㄉ內容-->
+            <div class="card-body">
+                <h5 class="card-text">作者: {{ post.author }}</h5>
+                <h5 class="card-text">{{ post.chapter }}</h5>
+                <h5 class="card-text">內容簡介︰ {{ post.pub_date }}</h5>
+                <h5 class="card-text">{{ post.body }}</h5>
+                <a href="javascript:void(0);" class="btn btn-primary" onclick="addToMyList('{{ post.title }}')">加入收藏!</a>     
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header"><h4 style='font-family:微軟正黑體;'>集數</h4></div>
+    {% for episode in episodes %}
+  <h2>{{ episode.title }}</h2>
+  <p>{{ episode.content }}</p>
+{% endfor %}
+</div>
+<p>Debug: episodes = {{ episodes }}</p>
+{% endblock content %}
