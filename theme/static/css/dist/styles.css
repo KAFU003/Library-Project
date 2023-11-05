@@ -124,12 +124,12 @@ a {
 }
 
 /* 表格顏色(暫時沒用) */
-table {
+table-body{
   background-color: var(--table-bg-light);
   color: var(--table-text-light);
 }
 
-.dark table {
+.dark table-text{
   background-color: var(--table-bg-dark);
   color: var(--table-text-dark);
 }

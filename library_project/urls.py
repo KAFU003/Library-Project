@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('switch-theme/', mv.change_theme, name="change-theme"),
     path('', mv.homepage, name="homepage"),
-    path('intro/<slug:slug>/', mv.showintro, name="showintro"),
+    path('intro/<slug:post_slug>/', mv.intro, name='intro'),
     path('filter/', mv.filter, name="filter"),
-    path('post/<int:book_id>/', mv.showepisode, name='showepisode'),
+    path('episode/<int:episode_id>/', mv.showepisode, name='showepisode'),
 ]
