@@ -28,8 +28,12 @@
 </div>
 <div class="card">
     <div class="card-header"><h4 style='font-family:微軟正黑體;'>集數</h4></div>
-    {% for episode in episodes %}
-    <a href="{% url 'showepisode' episode.id %}">{{ episode.episode }}</a>
-    {% endfor %}
+        <ul style="list-style: none; padding: 0; margin: 0;">
+            {% for episode in episodes %}
+            <li style="display: inline-block; margin-right: 10px;">
+                <a href="{% url 'showepisode' episode.id %}" style="font-size: 20pt;">{{ episode.episode }}, </a>
+            </li>
+            {% endfor %}
+        </ul>
 </div>
 {% endblock content %}
