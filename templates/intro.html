@@ -31,7 +31,7 @@
         <ul style="list-style: none; padding: 0; margin: 0;">
             {% for episode in episodes %}
             <li style="display: inline-block; margin-right: 10px;">
-                <a href="{% url 'showepisode' episode.id %}" style="font-size: 20pt;">{{ episode.episode }}, </a>
+                <a href="{% url 'showepisode' episode.id %}" style="font-size: 20pt;">{{ episode.episode }}</a>
             </li>
             {% endfor %}
         </ul>
