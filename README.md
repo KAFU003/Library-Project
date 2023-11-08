@@ -1,3 +1,3 @@
 # Library-Project
-for midterm
+for midterm,
 pip install django_filter django-tailwind django_browser_reload markdown
